@@ -1,0 +1,247 @@
+/* styles.css - Стили для приложения мониторинга температуры */
+
+/* Основные стили */
+.stApp {
+    background-color: #f5f5f5;
+}
+
+/* Заголовок приложения */
+.main-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.main-header p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Карточки метрик */
+.metric-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 0.5rem 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Бейджи статуса */
+.warning-badge {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.normal-badge {
+    background-color: #51cf66;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Анимации */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Стили для боковой панели */
+.css-1d391kg {
+    background-color: #f8f9fa;
+}
+
+/* Стили для кнопок */
+.stButton > button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Стили для выпадающих списков */
+.stSelectbox > div > div {
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Стили для полей ввода */
+.stTextInput > div > div > input {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+/* Стили для загрузчика файлов */
+.stFileUploader {
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+.stFileUploader:hover {
+    border-color: #667eea;
+}
+
+/* Стили для метрик */
+.stMetric {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stMetric label {
+    font-weight: bold;
+    color: #555;
+}
+
+.stMetric .stMetricValue {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* Стили для информационных сообщений */
+.stAlert {
+    border-radius: 10px;
+    border-left: 4px solid;
+}
+
+.stAlert.stAlertInfo {
+    border-left-color: #667eea;
+}
+
+.stAlert.stAlertSuccess {
+    border-left-color: #51cf66;
+}
+
+.stAlert.stAlertWarning {
+    border-left-color: #ff6b6b;
+}
+
+.stAlert.stAlertError {
+    border-left-color: #ff4757;
+}
+
+/* Стили для expander */
+.streamlit-expanderHeader {
+    background-color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.streamlit-expanderContent {
+    background-color: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+    padding: 1rem;
+}
+
+/* Стили для датафреймов */
+.dataframe {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dataframe th {
+    background-color: #667eea;
+    color: white;
+    padding: 0.5rem;
+}
+
+.dataframe td {
+    padding: 0.5rem;
+}
+
+/* Стили для табов */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 2rem;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: #667eea;
+    color: white;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .main-header p {
+        font-size: 0.9rem;
+    }
+    
+    .stMetric .stMetricValue {
+        font-size: 1.5rem;
+    }
+}
+
+/* Стили для графиков */
+.js-plotly-plot {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: white;
+    padding: 1rem;
+}
+
+/* Стили для спиннеров загрузки */
+.stSpinner > div {
+    border-color: #667eea;
+}

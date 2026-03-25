@@ -1,0 +1,7 @@
+streamlit==1.55.0
+pandas==2.3.3
+numpy==2.4.3
+plotly==6.6.0
+aiohttp==3.13.3
+python-dotenv==1.2.2
+joblib==1.5.3
