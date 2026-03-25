@@ -98,6 +98,12 @@ def create_temperature_time_series(df, city):
     """Создает интерактивный график временного ряда с выделением аномалий"""
     city_data = df[df['city'] == city].copy()
     
+    # Проверяем наличие необходимых колонок
+    if 'rolling_mean' not in city_data.columns or 'rolling_std' not in city_data.columns:
+        # Если нет, вычисляем их
+        city_data = calculate_rolling_stats(city_data)
+        city_data = detect_anomalies(city_data)
+    
     fig = go.Figure()
     
     # Линия температуры
