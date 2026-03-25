@@ -383,14 +383,38 @@ def main():
         
         # Фильтруем для выбранного города
         if 'selected_city' in locals():
-            city_data = filtered_df[filtered_df['city'] == selected_city].copy()
+            # Берем данные для выбранного города из исходного df (не filtered_df)
+            city_data = st.session_state.df[st.session_state.df['city'] == selected_city].copy()
+            
+            # Применяем фильтр по дате если он есть
+            if 'date_range' in locals() and len(date_range) == 2:
+                start_date, end_date = date_range
+                city_data = city_data[
+                    (city_data['timestamp'].dt.date >= start_date) &
+                    (city_data['timestamp'].dt.date <= end_date)
+                ]
+            
+            # Пересчитываем скользящие статистики для отфильтрованных данных
+            if len(city_data) > 0:
+                city_data = calculate_rolling_stats(city_data)
+                city_data = detect_anomalies(city_data)
         else:
-            city_data = filtered_df[filtered_df['city'] == filtered_df['city'].unique()[0]].copy()
-            selected_city = filtered_df['city'].unique()[0]
-        
-        if len(city_data) == 0:
-            st.warning(f"Нет данных для {selected_city} в выбранном диапазоне дат")
-            return
+            # Если selected_city нет, берем первый город
+            first_city = filtered_df['city'].unique()[0]
+            city_data = st.session_state.df[st.session_state.df['city'] == first_city].copy()
+            
+            if 'date_range' in locals() and len(date_range) == 2:
+                start_date, end_date = date_range
+                city_data = city_data[
+                    (city_data['timestamp'].dt.date >= start_date) &
+                    (city_data['timestamp'].dt.date <= end_date)
+                ]
+            
+            if len(city_data) > 0:
+                city_data = calculate_rolling_stats(city_data)
+                city_data = detect_anomalies(city_data)
+            
+            selected_city = first_city
         
         # Сводная статистика
         st.subheader(f"📈 Анализ температуры: {selected_city}")
