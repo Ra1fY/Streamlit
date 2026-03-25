@@ -46,7 +46,7 @@
 /* Бейджи статуса */
 .warning-badge {
     background-color: #ff6b6b;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 0.5rem;
     border-radius: 5px;
     text-align: center;
@@ -56,7 +56,7 @@
 
 .normal-badge {
     background-color: #51cf66;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 0.5rem;
     border-radius: 5px;
     text-align: center;
@@ -78,13 +78,13 @@
 
 /* Стили для боковой панели */
 .css-1d391kg {
-    background-color: #f8f9fa;
+    background-color: #000000;
 }
 
 /* Стили для кнопок */
 .stButton > button {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -98,14 +98,14 @@
 
 /* Стили для выпадающих списков */
 .stSelectbox > div > div {
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     border-radius: 5px;
 }
 
 /* Стили для полей ввода */
 .stTextInput > div > div > input {
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     padding: 0.5rem;
 }
 
@@ -116,7 +116,7 @@
 
 /* Стили для загрузчика файлов */
 .stFileUploader {
-    border: 2px dashed #ddd;
+    border: 2px dashed #000000;
     border-radius: 10px;
     padding: 1rem;
     text-align: center;
@@ -129,7 +129,7 @@
 
 /* Стили для метрик */
 .stMetric {
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -170,7 +170,7 @@
 
 /* Стили для expander */
 .streamlit-expanderHeader {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     font-weight: bold;
     color: #667eea;
@@ -191,7 +191,7 @@
 
 .dataframe th {
     background-color: #667eea;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 0.5rem;
 }
 
@@ -202,7 +202,7 @@
 /* Стили для табов */
 .stTabs [data-baseweb="tab-list"] {
     gap: 2rem;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     padding: 0.5rem;
     border-radius: 10px;
 }
@@ -215,7 +215,7 @@
 
 .stTabs [aria-selected="true"] {
     background-color: #667eea;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 /* Адаптивность для мобильных устройств */
@@ -237,7 +237,7 @@
 .js-plotly-plot {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     padding: 1rem;
 }
 
